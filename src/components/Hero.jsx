@@ -6,7 +6,7 @@ import { IoIosArrowRoundForward } from 'react-icons/io'
 const Hero = () => {
   return (
     <div className='w-full bg-gradient-to-br from-[#F3F8FF] to-white  p-2 md:p-6'>
-        <div className="mt-25 w-[90%] lg:w-[80%] m-auto flex flex-col gap-7 py-10 items-center">
+        <div className="mt-25 w-[90%] lg:w-[80%] m-auto flex flex-col gap-7 pt-10 pb-25 items-center">
             {/* Left Side */}
             <div className="w-full">
                 <p className='inline-flex items-center mb-9 gap-2 text-[#1E5BFF] bg-[#EAF2FF] px-4 py-2 rounded-full'>
@@ -57,7 +57,13 @@ const Hero = () => {
             {/* Right Side  */}
             <div className="w-full rounded-3xl">
                 <img 
-                    className='w-full rounded-3xl'
+                    className='
+                    w-full rounded-3xl
+                    shadow-[
+                    -20px_20px_40px_rgba(59,130,246,0.25),
+                    20px_25px_50px_rgba(0,0,0,0.25),
+                    20px_-20px_40px_rgba(168,85,247,0.25)
+                    ]'
                     src={heroImg} 
                     alt="heroImg" 
                 />
