@@ -1,11 +1,12 @@
 import React from 'react'
 import { HiCode } from 'react-icons/hi'
-import heroImg from '../assets/hero.jpeg'
+import heroImg from '../../assets/hero.jpeg'
 import { IoIosArrowRoundForward } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 
-const Hero = () => {
+const Hero = ({refProp, onCarriculumClick}) => {
   return (
-    <div className='w-full bg-gradient-to-br from-[#F3F8FF] to-white  p-2 md:p-6'>
+    <div className='w-full bg-gradient-to-br from-[#F3F8FF] to-white  p-2 md:p-6' ref={refProp}>
         <div className="mt-25 w-[90%] lg:w-[80%] m-auto flex flex-col gap-7 pt-10 pb-25 items-center">
             {/* Left Side */}
             <div className="w-full">
@@ -22,13 +23,21 @@ const Hero = () => {
                 through hands-on projects.Join our comprehensive 3- <br /> month online program and
                 build real-world skills.</p>
                 <div className="flex flex-col gap-3 md:flex-row my-14">
-                    <button className='flex flex-row items-center justify-center gap-4 bg-[#1E5BFF] py-2 px-6 text-white lg:text-lg rounded-lg hover:bg-[#184AE0] transition-colors font-semibold'>
-                        Enroll Now
-                        <IoIosArrowRoundForward 
-                            size={25}
-                        />
+                    <button >
+                        <Link 
+                            to="/enroll"
+                            className='flex flex-row items-center justify-center gap-4 bg-[#1E5BFF] py-2 px-6 text-white lg:text-lg rounded-lg hover:bg-[#184AE0] transition-colors font-semibold'
+                        >
+                            Enroll Now
+                            <IoIosArrowRoundForward 
+                                size={25}
+                            />
+                        </Link>
                     </button>
-                    <button className='bg-transparent py-2 px-6 rounded-lg  border border-[#D1D5DB] lg:text-lg text-black hover:bg-[#EEF0F2] transition-colors font-semibold'>
+                    <button 
+                        className='bg-transparent py-2 px-6 rounded-lg  border border-[#D1D5DB] lg:text-lg text-black hover:bg-[#EEF0F2] transition-colors font-semibold cursor-pointer' 
+                        onClick={onCarriculumClick}
+                    >
                         View Curicullum
                     </button>
                 </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { HiOutlineCheck } from 'react-icons/hi'
 import { IoIosArrowRoundForward } from 'react-icons/io'
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 
 const CTA = () => {
   return (
@@ -85,11 +86,16 @@ const CTA = () => {
                 </div>
 
             </div>
-            <button className='flex flex-row w-full my-5 items-center justify-center gap-4 bg-[#1E5BFF] py-2 px-6 text-white lg:text-lg rounded-lg hover:bg-[#184AE0] transition-colors font-semibold'>
-                Secure Your Spot Now
-                <IoIosArrowRoundForward 
-                    size={25}
-                />
+            <button className='w-full my-5  bg-[#1E5BFF] py-2 px-6 text-white lg:text-lg rounded-lg hover:bg-[#184AE0] transition-colors font-semibold'>
+                <Link
+                    to="/enroll"
+                    className='flex flex-row items-center justify-center gap-4'
+                >
+                    Secure Your Spot Now
+                    <IoIosArrowRoundForward 
+                        size={25}
+                    />
+                </Link>
             </button>
             <small className='text-[#a4a0a0] md:text-[14px]'>30-day money-back guarantee • Only 5 seats left</small>
         </div>

@@ -3,9 +3,9 @@ import { AiOutlineClockCircle, AiOutlineLaptop, AiOutlinePaperClip, AiOutlineTea
 import { BsBook, BsCode } from 'react-icons/bs'
 import { IoIosRibbon } from 'react-icons/io'
 
-const KPI = () => {
+const KPI = ({refProp}) => {
   return (
-    <div className='w-full'>
+    <section ref={refProp} className='w-full scroll-mt-24'>
         <div className="w-[90%] lg:w-[80%] m-auto py-25">
             <h2 className='text-2xl lg:text-4xl text-center leading-[120%]'>Why Choose Our Program?</h2>
             <p className='text-lg lg:text-xl md:w-[800px] md:m-auto text-center my-3 text-[#a4a0a0]'>
@@ -73,7 +73,7 @@ const KPI = () => {
 
             </div>
         </div>
-    </div>
+    </section>
   )
 }
 

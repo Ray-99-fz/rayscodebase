@@ -1,26 +1,56 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import KPI from './components/KPI'
-import Carriculum from './components/Carriculum'
-import Testimonials from './components/Testimonials'
-import CTA from './components/CTA'
-import FAQ from './components/FAQ'
-import Footer from './components/Footer'
+import Home from "./pages/Home";
+import Enroll from "./pages/Enroll";
 
-const App = () => {
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
+
+const ScrollTop = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  }, [pathname, hash]);
+
+  return null;
+};
+
+
+function AppRoutes() {
+  const location = useLocation();
+
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <KPI />
-      <Carriculum />
-      <Testimonials />
-      <CTA />
-      <FAQ />
-      <Footer />
-    </div>
-  )
+    <>
+      <ScrollTop />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/enroll" element={<Enroll />} />
+        </Routes>
+      </AnimatePresence>
+    </>
+  );
 }
 
-export default App
+function App() {
+  return (
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  );
+}
+
+export default App;

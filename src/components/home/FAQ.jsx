@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import SubFAQ from './SubFAQ'
-import { faqData } from './Data'
+import { faqData } from '../../data/Data'
 
-const FAQ = () => {
+const FAQ = ({refProp}) => {
     const [expendedId, setExpendedId] = useState(null)
 
     const toggleExpansion = (id) => {
@@ -10,7 +10,7 @@ const FAQ = () => {
     }
 
   return (
-    <div className='w-full bg-[#F3F8FF]'>
+    <section className='w-full bg-[#F3F8FF] scroll-mt-24' ref={refProp}>
         <div className="w-[90%] lg:w-[80%] m-auto py-25">
             <h2 className='text-2xl lg:text-4xl text-center leading-[120%]'>Frequently Asked Questions</h2>
             <p className='text-lg lg:text-xl md:w-[800px] md:m-auto text-center my-3 text-[#a4a0a0]'>
@@ -28,7 +28,7 @@ const FAQ = () => {
                 ))}
             </div>
         </div>
-    </div>
+    </section>
   )
 }
 

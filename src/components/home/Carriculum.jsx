@@ -1,9 +1,9 @@
 import React from 'react'
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
 
-const Carriculum = () => {
+const Carriculum = ({refProp}) => {
   return (
-    <div className='w-full bg-[#F3F8FF]'>
+    <section className='w-full bg-[#F3F8FF] scroll-mt-24' ref={refProp}>
         <div className="w-[90%] lg:w-[80%] m-auto py-25">
             <h2 className='text-2xl lg:text-4xl text-center leading-[120%]'>Course Curriculum</h2>
             <p className='text-lg lg:text-xl md:w-[800px] md:m-auto text-center my-3 text-[#a4a0a0]'>
@@ -213,7 +213,7 @@ const Carriculum = () => {
 
             </div>
         </div>
-    </div>
+    </section>
   )
 }
 
