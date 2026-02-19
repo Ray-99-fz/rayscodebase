@@ -15,12 +15,14 @@ const CTA = () => {
             <p className='inline-flex items-center mb-9 gap-2 text-[#1E5BFF] bg-[#EAF2FF] px-4 py-2 rounded-full'>
                 Early Bird Discount
             </p>
-            <div className="flex gap-2.5 items-baseline text-black text-4xl lg:text-7xl">
-                <span className='line-through text-[#a4a0a0] text-2xl lg:text-3xl'>MWK97800</span>
+            <div className="flex gap-2.5 items-baseline text-black text-3xl lg:text-7xl">
+                <span className='line-through text-[#a4a0a0] text-xl lg:text-3xl'>MWK97800</span>
                 <p>MWK57800</p>
             </div>
             <p className='text-center md:text-lg text-[#a4a0a0]'>One-time payment or flexible installments available</p>
-            <div className="flex flex-col my-6 md:flex-row items-center md:justify-between md:gap-16">
+
+
+            <div className="flex flex-col my-6 md:flex-row items-start md:items-center lg:items-center md:justify-between md:gap-16">
                 <div className="">
                     <div className="flex items-start my-3 gap-3 text-black md:text-lg leading-relaxed">
                         <HiOutlineCheck
