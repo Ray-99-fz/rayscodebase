@@ -11,7 +11,7 @@ const CTA = () => {
         <p className='text-lg lg:text-xl md:w-[800px] md:m-auto text-center my-3 text-white/90'>
             Limited seats available for the next cohort starting February 15, 2026
         </p>
-        <div className="w-[90%] lg:w-[80%] m-auto bg-white my-15 rounded-3xl p-5 md:p-10 lg:p-15 flex flex-col items-center">
+        <div className="w-[90%] lg:w-[80%] m-auto bg-white my-12 rounded-3xl p-5 md:p-10 lg:p-15 flex flex-col items-center">
             <p className='inline-flex items-center mb-9 gap-2 text-[#1E5BFF] bg-[#EAF2FF] px-4 py-2 rounded-full'>
                 Early Bird Discount
             </p>
@@ -20,7 +20,7 @@ const CTA = () => {
                 <p>MWK57800</p>
             </div>
             <p className='text-center md:text-lg text-[#a4a0a0]'>One-time payment or flexible installments available</p>
-            <div className="flex flex-col my-6 md:flex-row items-center justify-between md:gap-16">
+            <div className="flex flex-col my-6 md:flex-row items-center md:justify-between md:gap-16">
                 <div className="">
                     <div className="flex items-start my-3 gap-3 text-black md:text-lg leading-relaxed">
                         <HiOutlineCheck

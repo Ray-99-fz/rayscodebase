@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/home/Navbar'
 import Hero from '../components/home/Hero'
 import KPI from '../components/home/KPI'
 import Carriculum from '../components/home/Carriculum'
