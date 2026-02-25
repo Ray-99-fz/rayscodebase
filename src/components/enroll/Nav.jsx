@@ -22,11 +22,7 @@ const Nav = ({onCarriculumClick, onTestimonialsClick, onKPIClick, onFAQClick, on
                     />
                 </div>
                 <p className='lg:text-xl font-semibold cursor-pointer' onClick={onLogoClick}>
-                    <Link 
-                        to='/'
-                    >
-                        Ray's Codebase
-                    </Link>
+                    Ray's Codebase
                 </p>
             </div>
 
@@ -45,6 +41,35 @@ const Nav = ({onCarriculumClick, onTestimonialsClick, onKPIClick, onFAQClick, on
                     </Link>
                 </button>
             </div>
+
+
+                        {/* Side CTA Call & Whatsapp */}
+            
+                        <div className="bg-blue-600/70 w-[80px] h-[120px] p-3 items-center justify-between 
+                        text-white/70 fixed top-[45%] right-0 z-50 
+                        rounded-tl-3xl rounded-bl-3xl 
+                        flex flex-col gap-5">
+            
+                            {/* WhatsApp */}
+                            <a 
+                                href="https://wa.me/265984368805" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="hover:text-white transition-colors cursor-pointer"
+                            >
+                                <FaWhatsapp size={30} />
+                            </a>
+            
+                            {/* Phone Call */}
+                            <a 
+                                href="tel:+265984368805"
+                                className="hover:text-white transition-colors cursor-pointer"
+                            >
+                                <BsTelephone size={30} />
+                            </a>
+            
+                        </div>
+            
 
             
         </div>
