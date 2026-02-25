@@ -3,6 +3,7 @@ import { FiMenu } from 'react-icons/fi'
 import { HiCode } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 const Nav = ({onCarriculumClick, onTestimonialsClick, onKPIClick, onFAQClick, onLogoClick}) => {
     const [nav, setNav] = useState(false)
@@ -27,6 +28,22 @@ const Nav = ({onCarriculumClick, onTestimonialsClick, onKPIClick, onFAQClick, on
                         Ray's Codebase
                     </Link>
                 </p>
+            </div>
+
+            {/* Right */}
+
+            <div className="">
+                <button
+                    className='cursor-pointer bg-transparent border border-[#e0dcdc] p-2 px-4 text-center rounded-lg text-lg text-black hover:bg-[#e0dcdc]'
+                >
+                    <Link
+                        to='/'
+                        className='flex items-center gap-1'
+                    >
+                        <IoIosArrowRoundBack size={20} />
+                        Return
+                    </Link>
+                </button>
             </div>
 
             
