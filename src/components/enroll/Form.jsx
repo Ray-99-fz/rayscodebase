@@ -139,11 +139,11 @@ const Form = () => {
 
         <div className="flex flex-col lg:flex-row gap-4">
             <button 
-                className='cursor-pointer bg-gradient-to-br from-[#5650FB] to-[#7C3EFB] rounded-lg text-lg font-semibold text-white p-2 text-center w-full lg:w-[80%]'
+                className='cursor-pointer bg-gradient-to-br from-[#5650FB] to-[#7C3EFB] rounded-lg text-lg font-semibold text-white p-2 text-center w-full '
             >
                 Submit Application
             </button>
-            <button
+            {/* <button
                 className='cursor-pointer bg-transparent border border-[#e0dcdc] p-2 text-center rounded-lg text-lg text-black w-full lg:w-[20%] hover:bg-[#e0dcdc]'
             >
                 <Link
@@ -151,7 +151,7 @@ const Form = () => {
                 >
                     Cancel
                 </Link>
-            </button>
+            </button> */}
         </div>
 
     </form>
