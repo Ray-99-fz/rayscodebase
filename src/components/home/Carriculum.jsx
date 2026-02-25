@@ -15,7 +15,7 @@ const Carriculum = ({refProp}) => {
                 {/* Grid 1 */}
                 <div className="bg-white p-12 rounded-3xl hover:shadow-2xl">
                     <p className='inline-flex items-center gap-2 text-[#FFFFFF] bg-[#1E5BFF] px-4 py-2 rounded-full'>
-                        Month 1
+                        Structure
                     </p>
                     <h3 className='text-2xl lg:text-4xl my-8 font-semibold'>Foundations & Design</h3>
                     
@@ -81,7 +81,7 @@ const Carriculum = ({refProp}) => {
                 {/* Grid 2 */}
                 <div className="bg-white p-12 rounded-3xl hover:shadow-2xl">
                     <p className='inline-flex items-center gap-2 text-[#FFFFFF] bg-[#1E5BFF] px-4 py-2 rounded-full'>
-                        Month 2
+                        Interactivity
                     </p>
                     <h3 className='text-2xl lg:text-4xl my-8 font-semibold'>JavaScript & Browser APIs</h3>
                     
@@ -147,7 +147,7 @@ const Carriculum = ({refProp}) => {
                                 {/* Grid 3 */}
                 <div className="bg-white p-12 rounded-3xl hover:shadow-2xl">
                     <p className='inline-flex items-center gap-2 text-[#FFFFFF] bg-[#1E5BFF] px-4 py-2 rounded-full'>
-                        Month 3
+                        Workflow
                     </p>
                     <h3 className='text-2xl lg:text-4xl my-8 font-semibold'>Professional Workflows</h3>
                     
