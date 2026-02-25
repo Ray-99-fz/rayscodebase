@@ -4,6 +4,8 @@ import { HiCode } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { IoIosArrowRoundBack } from "react-icons/io";
+import { FaWhatsapp } from "react-icons/fa6";
+import { BsTelephone } from "react-icons/bs";
 
 const Nav = ({onCarriculumClick, onTestimonialsClick, onKPIClick, onFAQClick, onLogoClick}) => {
     const [nav, setNav] = useState(false)
