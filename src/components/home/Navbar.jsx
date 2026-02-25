@@ -62,30 +62,30 @@ const Navbar = ({onCarriculumClick, onTestimonialsClick, onKPIClick, onFAQClick,
 
             {/* Side CTA Call & Whatsapp */}
 
-            <div className="bg-blue-600 w-[100px] h-[200px] p-8 items-center justify-between 
-  text-white/70 fixed top-[45%] right-0 z-50 
-  rounded-tl-3xl rounded-bl-3xl 
-  flex flex-col gap-5">
+            <div className="bg-blue-600/70 w-[80px] h-[120px] p-3 items-center justify-between 
+            text-white/70 fixed top-[45%] right-0 z-50 
+            rounded-tl-3xl rounded-bl-3xl 
+            flex flex-col gap-5">
 
-  {/* WhatsApp */}
-  <a 
-    href="https://wa.me/265984368805" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="hover:text-white transition-colors"
-  >
-    <FaWhatsapp size={40} />
-  </a>
+                {/* WhatsApp */}
+                <a 
+                    href="https://wa.me/265984368805" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors cursor-pointer"
+                >
+                    <FaWhatsapp size={30} />
+                </a>
 
-  {/* Phone Call */}
-  <a 
-    href="tel:+265984368805"
-    className="hover:text-white transition-colors"
-  >
-    <BsTelephone size={40} />
-  </a>
+                {/* Phone Call */}
+                <a 
+                    href="tel:+265984368805"
+                    className="hover:text-white transition-colors cursor-pointer"
+                >
+                    <BsTelephone size={30} />
+                </a>
 
-</div>
+            </div>
 
             {/* toggle menu bar */}
             <div className={nav ? 'bg-white w-[300px] h-full fixed top-0 right-0 z-50 duration-500' : 'bg-white w-[300px] h-full fixed top-0 right-[-100%] z-50 duration-500'}>
