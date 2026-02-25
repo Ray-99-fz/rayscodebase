@@ -26,7 +26,7 @@ const Navbar = ({onCarriculumClick, onTestimonialsClick, onKPIClick, onFAQClick,
             </div>
 
             {/* Right */}
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-6'>
                 <nav className='hidden md:flex'>
                     <ul className='group flex gap-10 lg:gap-15 items-center cursor-pointer text-[#a4a0a0] lg:text-xl'>
                         <li className='hover:text-[#828080]' onClick={onKPIClick}>
