@@ -3,6 +3,8 @@ import { FiMenu } from 'react-icons/fi'
 import { HiCode } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
+import { FaWhatsapp } from "react-icons/fa6";
+import { BsTelephone } from "react-icons/bs";
 
 const Navbar = ({onCarriculumClick, onTestimonialsClick, onKPIClick, onFAQClick, onLogoClick}) => {
     const [nav, setNav] = useState(false)
@@ -57,6 +59,33 @@ const Navbar = ({onCarriculumClick, onTestimonialsClick, onKPIClick, onFAQClick,
                     />
                 </div>
             </div>
+
+            {/* Side CTA Call & Whatsapp */}
+
+            <div className="bg-blue-600 w-[100px] h-[200px] p-8 items-center justify-between 
+  text-white/70 fixed top-[45%] right-0 z-50 
+  rounded-tl-3xl rounded-bl-3xl 
+  flex flex-col gap-5">
+
+  {/* WhatsApp */}
+  <a 
+    href="https://wa.me/265984368805" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="hover:text-white transition-colors"
+  >
+    <FaWhatsapp size={40} />
+  </a>
+
+  {/* Phone Call */}
+  <a 
+    href="tel:+265984368805"
+    className="hover:text-white transition-colors"
+  >
+    <BsTelephone size={40} />
+  </a>
+
+</div>
 
             {/* toggle menu bar */}
             <div className={nav ? 'bg-white w-[300px] h-full fixed top-0 right-0 z-50 duration-500' : 'bg-white w-[300px] h-full fixed top-0 right-[-100%] z-50 duration-500'}>
