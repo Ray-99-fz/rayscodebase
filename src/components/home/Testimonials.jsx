@@ -1,9 +1,52 @@
 import React from 'react'
-import { AiFillStar } from 'react-icons/ai'
+import Testimonialsdata from '../../data/Testimonialsdata'
+import Testcards from './Testcards'
+import { motion, useMotionValue, useAnimationFrame } from "framer-motion"
+import { useState, useRef, useEffect } from "react"
+
 
 const Testimonials = ({refProp}) => {
+
+    const x = useMotionValue(0)
+const [isPaused, setIsPaused] = useState(false)
+
+const speed = 50 // pixels per second
+
+useAnimationFrame((time, delta) => {
+  if (isPaused) return
+
+  const moveBy = (speed * delta) / 1000
+  x.set(x.get() - moveBy)
+
+  // reset seamlessly when halfway scrolled
+  if (x.get() <= -trackWidth / 2) {
+    x.set(0)
+  }
+})
+
+const trackRef = useRef(null)
+const [trackWidth, setTrackWidth] = useState(0)
+
+useEffect(() => {
+  if (trackRef.current) {
+    setTrackWidth(trackRef.current.scrollWidth)
+  }
+}, [])
+
+
+    const renderTestimonials = Testimonialsdata.map((card, index) => {
+        return <Testcards  
+            key={index}
+            rating={card.rating}
+            text={card.text}
+            name={card.name}
+            initials={card.initials}
+            career={card.career}
+        />
+    })
+
   return (
-    <section ref={refProp} className='w-full scroll-mt-24'>
+    <section ref={refProp} className='w-full scroll-mt-24 overflow-x-hidden'>
         <div className="w-[90%] lg:w-[80%] m-auto py-25">
             <h2 className='text-2xl lg:text-4xl text-center leading-[120%]'>Success Stories</h2>
             <p className='text-lg lg:text-xl md:w-[800px] md:m-auto text-center my-3 text-[#a4a0a0]'>
@@ -11,78 +54,21 @@ const Testimonials = ({refProp}) => {
             </p>
 
             {/* Grids */}
-            <div className="grid md:grid-cols-3 gap-6 my-20">
-
-                <div className="bg-[#F3F8FF] rounded-3xl p-8">
-                    <div className="flex gap-1.5">
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                    </div>
-                    <p className='text-lg italic my-7'>"Ray's Codebase gave me the practical skills I needed. 
-                    The focus on browser DevTools and real project workflows 
-                    made the transition to my first dev job so much smoother!"
-                    </p>
-                    <div className="flex items-center gap-5">
-                        <div className="flex items-center justify-center bg-gradient-to-br from-[#5650FB] to-[#7C3EFB] p-3 h-12 w-12 text-lg text-white rounded-t-full rounded-b-full">HG</div>
-                        <div className="">
-                            <h4 className='text-xl font-bold'>Harry Gama</h4>
-                            <p className='text-lg text-[#a4a0a0]'>Front-End Developer at TechCorp</p>
-                        </div>
-                    </div>
-                </div>
-
-                                <div className="bg-[#F3F8FF] rounded-3xl p-8">
-                    <div className="flex gap-1.5">
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                    </div>
-                    <p className='text-lg italic my-7'>"Learning SCRUM and Git from the start was game-changing. 
-                        Ray teaches you how developers actually work in teams, not just how to code. The online 
-                        format was perfect for my schedule."
-                    </p>
-                    <div className="flex gap-5 items-center">
-                        <div className="flex items-center justify-center bg-gradient-to-br from-[#5650FB] to-[#7C3EFB] p-3 h-12 w-12 text-lg text-white rounded-t-full rounded-b-full">
-                            IS
-                        </div>
-                        <div className="">
-                            <h4 className='text-xl font-bold'>Ishmael Smart</h4>
-                            <p className='text-lg text-[#a4a0a0]'>UI Developer at StartupHub</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="bg-[#F3F8FF] rounded-3xl p-8">
-                    <div className="flex gap-1.5">
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                        <AiFillStar size={25} className='text-[#FFC107] shrink-0'/>
-                    </div>
-                    <p className='text-lg italic my-7'>"The team projects were invaluable. 
-                        I learned Figma, modern CSS, and JavaScript while building real 
-                        portfolio pieces. Now I'm confidently taking on client projects!"
-                    </p>
-                    <div className="flex gap-5 items-center">
-                        <div className="flex items-center justify-center  bg-gradient-to-br from-[#5650FB] to-[#7C3EFB] p-3 h-12 w-12 text-lg text-white rounded-t-full rounded-b-full">
-                            NM
-                        </div>
-                        <div className="">
-                            <h4 className='text-xl font-bold'>Najman Mtiko</h4>
-                            <p className='text-lg text-[#a4a0a0]'>Freelance Web Developer</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
+<div
+  className="overflow-hidden w-full MyGradient mt-15"
+  onMouseEnter={() => setIsPaused(true)}
+  onMouseLeave={() => setIsPaused(false)}
+>
+  <motion.div
+    ref={trackRef}
+  style={{ x }}
+  className="flex gap-6 w-max"
+  >
+    {renderTestimonials}
+    {renderTestimonials}
+  </motion.div>
+</div>
+</div>
     </section>
   )
 }
