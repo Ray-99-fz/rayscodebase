@@ -5,7 +5,7 @@ export default [
         text: "I had the pleasure of learning web development (HTML, CSS, and JavaScript) under the guidance of the Ray’s Codebase team. They are exceptional mentors skilled, patient, and incredibly supportive. The team’s unique ability to break down complex concepts into clear, actionable steps made all the difference in my learning journey. Their passion for coding is infectious, and their dedication to students is unwavering. Whether you’re a beginner or looking to level up, the Ray’s Codebase team is the go‑to community for growth and mentorship.",
         name: "Harry Gama",
         initials: "HG",
-        career: "Front-End Developer at TechCorp"
+        career: "Information Technology"
     },
     {
         id: 11,
