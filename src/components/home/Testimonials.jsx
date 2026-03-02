@@ -7,7 +7,7 @@ import { useState, useRef, useEffect } from "react"
 
 const Testimonials = ({refProp}) => {
 
-
+  const [activeIndex, setActiveIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
 
 useEffect(() => {
@@ -49,7 +49,7 @@ useEffect(() => {
 
     const renderTestimonials = Testimonialsdata.map((card, index) => {
   return (
-    <div key={index} className="snap-start">
+    <div key={index} className="snap-start min-w-[300px]">
       <Testcards  
         rating={card.rating}
         text={card.text}
@@ -71,18 +71,44 @@ useEffect(() => {
 
             {/* Grids */}
 <div
-className="w-full MyGradient mt-15 overflow-x-auto md:overflow-hidden snap-x snap-mandatory"  onMouseEnter={() => setIsPaused(true)}
+  ref={trackRef}
+  onScroll={(e) => {
+    if (!isMobile) return
+
+    const container = e.currentTarget
+    const scrollLeft = container.scrollLeft
+    const cardWidth = container.firstElementChild.offsetWidth + 24
+    const index = Math.round(scrollLeft / cardWidth)
+
+    setActiveIndex(index)
+  }}
+  className="w-full MyGradient mt-15 overflow-x-auto snap-x snap-mandatory md:overflow-hidden"
+  onMouseEnter={() => setIsPaused(true)}
   onMouseLeave={() => setIsPaused(false)}
 >
   <motion.div
-  ref={trackRef}
-  style={isMobile ? {} : { x }}
-  className="flex gap-6 w-max"
->
+    style={isMobile ? {} : { x }}
+    className="flex gap-6 w-max"
+  >
     {renderTestimonials}
     {!isMobile && renderTestimonials}
   </motion.div>
 </div>
+{/* 👇 Scroll Indicators (Mobile Only) */}
+{isMobile && (
+  <div className="flex justify-center mt-6 gap-2 md:hidden">
+    {Testimonialsdata.map((_, index) => (
+      <div
+        key={index}
+        className={`h-2 w-2 rounded-full transition-all duration-300 ${
+          activeIndex === index
+            ? "bg-indigo-500 w-5"
+            : "bg-gray-300"
+        }`}
+      />
+    ))}
+  </div>
+)}
 </div>
     </section>
   )
