@@ -41,7 +41,11 @@ const Home = () => {
       <Testimonials refProp = {testimonialsRef} />
       <CTA />
       <FAQ refProp = {faqRef} />
-      <Footer />
+      <Footer 
+        onCarriculumClick = {() => scrollToSection(carriculumRef)}
+        onTestimonialsClick = {() => scrollToSection(testimonialsRef)}
+        onFAQClick = {() => scrollToSection(faqRef)}
+      />
     </div>
   )
 }
