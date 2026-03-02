@@ -10,7 +10,7 @@ export default [
     {
         id: 11,
         rating: 4,
-        text: "Learning SCRUM and Git from the start was game-changing. Ray teaches you how developers actually work in teams, not just how to code. The online format was perfect for my schedule.",
+        text: "I used to feel overwhelmed by the number of programming languages and didn’t know what to focus on. This course changed that. It gave me clarity, structure, and practical understanding of web development. I now have a defined path and the confidence to build real-world projects.",
         name: "Ishmael Smart",
         initials: "IS",
         career: "Front-End Developer at TechCorp"
