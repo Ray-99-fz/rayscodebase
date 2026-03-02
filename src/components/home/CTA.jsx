@@ -9,15 +9,15 @@ const CTA = () => {
     <div className='w-full bg-gradient-to-br from-[#5650FB] to-[#7C3EFB] py-20'>
         <h2 className='text-2xl lg:text-4xl text-center text-white leading-[120%]'>Ready to Start Your Journey?</h2>
         <p className='text-lg lg:text-xl md:w-[800px] md:m-auto text-center my-3 text-white/90'>
-            Limited seats available for the next cohort starting February 15, 2026
+            Limited seats available for the next cohort starting April 6, 2026
         </p>
         <div className="w-[90%] lg:w-[80%] m-auto bg-white my-12 rounded-3xl p-5 md:p-10 lg:p-15 flex flex-col items-center">
             <p className='inline-flex items-center mb-9 gap-2 text-[#1E5BFF] bg-[#EAF2FF] px-4 py-2 rounded-full'>
                 Early Bird Discount
             </p>
             <div className="flex gap-2.5 items-baseline text-black text-3xl lg:text-7xl">
-                <span className='line-through text-[#a4a0a0] text-xl lg:text-3xl'>MWK97800</span>
-                <p>MWK57800</p>
+                <span className='line-through text-[#a4a0a0] text-xl lg:text-3xl'>MWK127270</span>
+                <p>MWK93270</p>
             </div>
             <p className='text-center md:text-lg text-[#a4a0a0]'>One-time payment or flexible installments available</p>
 
@@ -99,7 +99,8 @@ const CTA = () => {
                     />
                 </Link>
             </button>
-            <small className='text-[#a4a0a0] md:text-[14px]'>30-day money-back guarantee • Only 5 seats left</small>
+            <small className='text-[#a4a0a0] md:text-[14px]'>30-day money-back guarantee</small>
+            {/* <p>• Only 5 seats left</p> */}
         </div>
     </div>
   )
