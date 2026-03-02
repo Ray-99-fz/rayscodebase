@@ -7,18 +7,31 @@ import { useState, useRef, useEffect } from "react"
 
 const Testimonials = ({refProp}) => {
 
+
+  const [isMobile, setIsMobile] = useState(false)
+
+useEffect(() => {
+  const checkScreen = () => {
+    setIsMobile(window.innerWidth < 768) // Tailwind md breakpoint
+  }
+
+  checkScreen()
+  window.addEventListener("resize", checkScreen)
+
+  return () => window.removeEventListener("resize", checkScreen)
+}, [])
+
     const x = useMotionValue(0)
 const [isPaused, setIsPaused] = useState(false)
 
 const speed = 50 // pixels per second
 
 useAnimationFrame((time, delta) => {
-  if (isPaused) return
+  if (isPaused || isMobile) return
 
   const moveBy = (speed * delta) / 1000
   x.set(x.get() - moveBy)
 
-  // reset seamlessly when halfway scrolled
   if (x.get() <= -trackWidth / 2) {
     x.set(0)
   }
@@ -35,15 +48,18 @@ useEffect(() => {
 
 
     const renderTestimonials = Testimonialsdata.map((card, index) => {
-        return <Testcards  
-            key={index}
-            rating={card.rating}
-            text={card.text}
-            name={card.name}
-            initials={card.initials}
-            career={card.career}
-        />
-    })
+  return (
+    <div key={index} className="snap-start">
+      <Testcards  
+        rating={card.rating}
+        text={card.text}
+        name={card.name}
+        initials={card.initials}
+        career={card.career}
+      />
+    </div>
+  )
+})
 
   return (
     <section ref={refProp} className='w-full scroll-mt-24 overflow-x-hidden'>
@@ -55,17 +71,16 @@ useEffect(() => {
 
             {/* Grids */}
 <div
-  className="overflow-hidden w-full MyGradient mt-15"
-  onMouseEnter={() => setIsPaused(true)}
+className="w-full MyGradient mt-15 overflow-x-auto md:overflow-hidden snap-x snap-mandatory"  onMouseEnter={() => setIsPaused(true)}
   onMouseLeave={() => setIsPaused(false)}
 >
   <motion.div
-    ref={trackRef}
-  style={{ x }}
+  ref={trackRef}
+  style={isMobile ? {} : { x }}
   className="flex gap-6 w-max"
-  >
+>
     {renderTestimonials}
-    {renderTestimonials}
+    {!isMobile && renderTestimonials}
   </motion.div>
 </div>
 </div>
