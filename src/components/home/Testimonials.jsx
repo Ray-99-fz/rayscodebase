@@ -73,15 +73,19 @@ useEffect(() => {
 <div
   ref={trackRef}
   onScroll={(e) => {
-    if (!isMobile) return
+  if (!isMobile) return
 
-    const container = e.currentTarget
-    const scrollLeft = container.scrollLeft
-    const cardWidth = container.firstElementChild.offsetWidth + 24
-    const index = Math.round(scrollLeft / cardWidth)
+  const container = e.currentTarget
+  const scrollLeft = container.scrollLeft
+  const containerWidth = container.clientWidth
 
-    setActiveIndex(index)
-  }}
+  const index = Math.min(
+    Testimonialsdata.length - 1,
+    Math.round(scrollLeft / containerWidth)
+  )
+
+  setActiveIndex(index)
+}}
   className="w-full MyGradient mt-15 overflow-x-auto snap-x snap-mandatory md:overflow-hidden"
   onMouseEnter={() => setIsPaused(true)}
   onMouseLeave={() => setIsPaused(false)}
