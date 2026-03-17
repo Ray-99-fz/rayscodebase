@@ -28,7 +28,7 @@ const Form = () => {
             console.log(userCredentials)
 
             emailjs
-            .send('service_g2edag8', 'template_ywchwbm',{
+            .send('service_5jwq72b', 'template_dgpczeh',{
                 firstname: userCredentials.firstname,
                 lastname: userCredentials.lastname,
                 email: userCredentials.email,
